@@ -1,0 +1,17 @@
+{
+  "name": "astravue",
+  "displayName": "Astravue",
+  "version": "1.0.0",
+  "description": "Connect to Astravue project management. Manage spaces, projects, tasks, subtasks, checklists, comments, time tracking, and team collaboration through natural language.",
+  "author": {
+    "name": "Astravue",
+    "url": "https://astravue.com"
+  },
+  "license": "Apache-2.0",
+  "keywords": ["project-management", "tasks", "time-tracking", "mcp", "collaboration", "teams"],
+  "logo": "assets/logo.svg",
+  "homepage": "https://astravue.com",
+  "repository": "https://github.com/AstravueOrg/astravue-mcp-server",
+  "mcp": "./.mcp.json",
+  "skills": "./skills/"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "astravue",
+  "description": "Connect to Astravue project management. Manage spaces, projects, tasks, subtasks, checklists, comments, time tracking, and team collaboration through natural language.",
+  "author": {
+    "name": "Astravue"
+  },
+  "mcpServers": "./.mcp.json",
+  "skills": "./skills/"
+}
