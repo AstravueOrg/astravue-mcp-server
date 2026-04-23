@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "astravue",
+  "description": "Astravue plugin marketplace for Claude Code",
+  "owner": {
+    "name": "Astravue",
+    "email": "support@astravue.com"
+  },
+  "plugins": [
+    {
+      "name": "astravue",
+      "description": "Connect to Astravue project management. Manage spaces, projects, tasks, subtasks, checklists, comments, time tracking, and team collaboration through natural language.",
+      "version": "1.0.1",
+      "author": {
+        "name": "Astravue",
+        "email": "support@astravue.com"
+      },
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/AstravueOrg/astravue-mcp-server"
+    }
+  ]
+}

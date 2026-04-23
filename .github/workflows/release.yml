@@ -1,0 +1,88 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate release versions
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          VERSION="${GITHUB_REF_NAME#v}"
+          CLAUDE_VERSION="$(jq -r '.version' .claude-plugin/plugin.json)"
+          MARKETPLACE_VERSION="$(jq -r '.plugins[0].version' .claude-plugin/marketplace.json)"
+          CURSOR_VERSION="$(jq -r '.version' .cursor-plugin/plugin.json)"
+          GEMINI_VERSION="$(jq -r '.version' gemini-extension.json)"
+
+          [ "$CLAUDE_VERSION" = "$VERSION" ] || {
+            echo ".claude-plugin/plugin.json version ($CLAUDE_VERSION) does not match tag version ($VERSION)"
+            exit 1
+          }
+
+          [ "$MARKETPLACE_VERSION" = "$VERSION" ] || {
+            echo "marketplace.json version ($MARKETPLACE_VERSION) does not match tag version ($VERSION)"
+            exit 1
+          }
+
+          [ "$CURSOR_VERSION" = "$VERSION" ] || {
+            echo ".cursor-plugin/plugin.json version ($CURSOR_VERSION) does not match tag version ($VERSION)"
+            exit 1
+          }
+
+          [ "$GEMINI_VERSION" = "$VERSION" ] || {
+            echo "gemini-extension.json version ($GEMINI_VERSION) does not match tag version ($VERSION)"
+            exit 1
+          }
+
+      - name: Extract changelog section
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          VERSION="${GITHUB_REF_NAME#v}"
+
+          python3 - "$VERSION" <<'PY'
+          from pathlib import Path
+          import sys
+
+          tag = sys.argv[1]
+          lines = Path("CHANGELOG.md").read_text(encoding="utf-8").splitlines()
+          start_header = f"## [{tag}] - "
+
+          collecting = False
+          collected: list[str] = []
+
+          for line in lines:
+              if line.startswith(start_header):
+                  collecting = True
+                  continue
+              if collecting and line.startswith("## ["):
+                  break
+              if collecting:
+                  collected.append(line)
+
+          body = "\n".join(collected).strip()
+          if not body:
+              raise SystemExit(f"Could not find CHANGELOG entry for version {tag}")
+
+          body += "\n"
+          Path("release-notes.md").write_text(body, encoding="utf-8")
+          PY
+      - name: Publish GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Astravue MCP ${{ github.ref_name }}
+          body_path: release-notes.md
