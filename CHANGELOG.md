@@ -21,6 +21,8 @@ The format is based on Keep a Changelog.
 
 ### Added
 
-- Added Claude Code marketplace metadata for Astravue so the plugin can be distributed through marketplace-based discovery flows.
-- Added aligned public version metadata for Claude, Cursor, and Gemini client manifests.
-- Added GitHub release tracking for published Astravue MCP metadata and compatibility updates.
+- Added Claude Code marketplace metadata for the Astravue plugin to support marketplace-based discovery and installation.
+
+### Changed
+
+- Aligned the published version metadata across the Claude, Cursor, and Gemini client manifests for consistent client recognition of the `1.0.1` release.
