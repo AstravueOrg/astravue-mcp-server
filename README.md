@@ -2,11 +2,7 @@
   <img src="assets/logo-full.svg" alt="Astravue" width="300">
 </p>
 
-<p align="center">
-  <a href="https://lobehub.com/mcp/astravueorg-astravue-mcp-server">
-    <img src="https://lobehub.com/badge/mcp-full/astravueorg-astravue-mcp-server" alt="Astravue MCP Server on LobeHub" />
-  </a>
-</p>
+[![LobeHub MCP](https://lobehub.com/badge/mcp/astravueorg-astravue-mcp-server)](https://lobehub.com/mcp/astravueorg-astravue-mcp-server)
 
 
 # Astravue MCP Server
