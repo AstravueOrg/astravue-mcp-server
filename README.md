@@ -3,12 +3,15 @@
 </p>
 
 <p align="center">
-  <a href="https://registry.modelcontextprotocol.io/?q=astravue"><img src="https://img.shields.io/badge/Official%20MCP%20Registry-active-2563eb?style=for-the-badge&logo=mcp&logoColor=white" alt="Official MCP Registry"></a>
-  <a href="https://www.pulsemcp.com/servers/astravue"><img src="https://img.shields.io/badge/PulseMCP-official-7c3aed?style=for-the-badge&logo=pulse&logoColor=white" alt="Official on PulseMCP"></a>
-  <a href="https://vibehackers.io/mcp/astravue-mcp"><img src="https://img.shields.io/badge/Vibehackers-listed-111827?style=for-the-badge&logo=v&logoColor=white" alt="Listed on Vibehackers"></a>
-  <a href="https://mcpmarket.com/server/astravue"><img src="https://img.shields.io/badge/MCP%20Market-listed-0f766e?style=for-the-badge&logo=marketplace&logoColor=white" alt="Listed on MCP Market"></a>
-  <a href="https://glama.ai/mcp/servers?query=astravue"><img src="https://img.shields.io/badge/Glama.ai-listed-0ea5e9?style=for-the-badge&logo=glama&logoColor=white" alt="Listed on Glama.ai"></a>
-  <a href=".claude-plugin/marketplace.json"><img src="https://img.shields.io/badge/Claude%20Code-plugin-d97757?style=for-the-badge&logo=claude&logoColor=white" alt="Claude Code plugin"></a>
+  <a href="https://astravue.com"><img src="https://img.shields.io/badge/Website-astravue.com-1f8f75?style=flat&labelColor=555" alt="Website"></a>
+  <a href="https://github.com/AstravueOrg/astravue-mcp-server/releases/latest"><img src="https://img.shields.io/github/v/release/AstravueOrg/astravue-mcp-server?label=release&style=flat&labelColor=555" alt="Latest release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/AstravueOrg/astravue-mcp-server?style=flat&labelColor=555" alt="License"></a>
+  <a href="https://registry.modelcontextprotocol.io/?q=astravue"><img src="https://img.shields.io/badge/MCP%20Registry-official-2563eb?style=flat&labelColor=555" alt="Official MCP Registry"></a>
+  <a href="https://www.pulsemcp.com/servers/astravue"><img src="https://img.shields.io/badge/PulseMCP-official-7c3aed?style=flat&labelColor=555" alt="Official on PulseMCP"></a>
+  <a href="https://vibehackers.io/mcp/astravue-mcp"><img src="https://img.shields.io/badge/Vibehackers-listed-111827?style=flat&labelColor=555" alt="Listed on Vibehackers"></a>
+  <a href="https://mcpmarket.com/server/astravue"><img src="https://img.shields.io/badge/MCP%20Market-listed-0f766e?style=flat&labelColor=555" alt="Listed on MCP Market"></a>
+  <a href="https://glama.ai/mcp/servers?query=astravue"><img src="https://img.shields.io/badge/Glama.ai-listed-0ea5e9?style=flat&labelColor=555" alt="Listed on Glama.ai"></a>
+  <a href=".claude-plugin/marketplace.json"><img src="https://img.shields.io/badge/Claude%20Code-plugin-d97757?style=flat&labelColor=555" alt="Claude Code plugin"></a>
 </p>
 
 <p align="center">
