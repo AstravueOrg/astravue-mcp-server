@@ -2,8 +2,18 @@
   <img src="assets/logo-full.svg" alt="Astravue" width="300">
 </p>
 
+<p align="center">
+  <a href="https://registry.modelcontextprotocol.io/?q=astravue"><img src="https://img.shields.io/badge/Official%20MCP%20Registry-active-2563eb?style=for-the-badge&logo=mcp&logoColor=white" alt="Official MCP Registry"></a>
+  <a href="https://www.pulsemcp.com/servers/astravue"><img src="https://img.shields.io/badge/PulseMCP-official-7c3aed?style=for-the-badge&logo=pulse&logoColor=white" alt="Official on PulseMCP"></a>
+  <a href="https://vibehackers.io/mcp/astravue-mcp"><img src="https://img.shields.io/badge/Vibehackers-listed-111827?style=for-the-badge&logo=v&logoColor=white" alt="Listed on Vibehackers"></a>
+  <a href="https://mcpmarket.com/server/astravue"><img src="https://img.shields.io/badge/MCP%20Market-listed-0f766e?style=for-the-badge&logo=marketplace&logoColor=white" alt="Listed on MCP Market"></a>
+  <a href="https://glama.ai/mcp/servers?query=astravue"><img src="https://img.shields.io/badge/Glama.ai-listed-0ea5e9?style=for-the-badge&logo=glama&logoColor=white" alt="Listed on Glama.ai"></a>
+  <a href=".claude-plugin/marketplace.json"><img src="https://img.shields.io/badge/Claude%20Code-plugin-d97757?style=for-the-badge&logo=claude&logoColor=white" alt="Claude Code plugin"></a>
+</p>
 
-
+<p align="center">
+  <a href="https://cursor.com/en/install-mcp?name=astravue-mcp&config=eyJ1cmwiOiJodHRwczovL2FwaS5hc3RyYXZ1ZS5jb20vbWNwIn0%3D"><img src="https://cursor.com/deeplink/mcp-install-dark.svg" alt="Install MCP Server in Cursor"></a>
+</p>
 
 # Astravue MCP Server
 
