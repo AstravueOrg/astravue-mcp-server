@@ -2,6 +2,13 @@
   <img src="assets/logo-full.svg" alt="Astravue" width="300">
 </p>
 
+<p align="center">
+  <a href="https://lobehub.com/mcp/astravueorg-astravue-mcp-server">
+    <img src="https://lobehub.com/badge/mcp-full/astravueorg-astravue-mcp-server" alt="Astravue MCP Server on LobeHub" />
+  </a>
+</p>
+
+
 # Astravue MCP Server
 
 The Astravue MCP Server is a cloud-based bridge between your [Astravue](https://astravue.com) workspace and compatible AI tools. Once configured, it enables those tools to interact with your spaces, projects, tasks, time entries, and custom fields in real time. All actions are authenticated via OAuth 2.0 and respect the user's existing access controls.
@@ -580,6 +587,53 @@ The Astravue MCP Server provides **87 tools** across the following categories.
 | `astravue_preview_project_overview` | Opens a project overview with completion, health, and attention items | "Give me an overview of the Backend project" |
 
 </details>
+
+---
+
+## Available Prompts
+
+The Astravue MCP Server provides **15 prompts** — pre-built workflows that guide your AI assistant through common project management tasks.
+
+| Prompt | Description | Arguments |
+| :----- | :---------- | :-------- |
+| `daily_standup` | Generate a structured daily standup update for the current user based on their tasks | — |
+| `project_status_report` | Generate a professional project status report tailored for executive, stakeholder, or team audience | — |
+| `weekly_team_digest` | Generate a weekly digest summarising what shipped, what is at risk, and what is coming up | — |
+| `task_breakdown` | Suggest a subtask decomposition for a complex task to make it actionable | — |
+| `overdue_action_plan` | Generate a prioritised recovery plan for the current user's overdue tasks | — |
+| `sprint_planner` | Plan a sprint: select tasks by priority, estimate workload, assign owners, and define the sprint goal | `sprintGoal` (required) |
+| `risk_assessment` | Identify at-risk projects and tasks: overdue items, off-track projects, unassigned high-priority work, and deadline conflicts | — |
+| `time_tracking_report` | Generate a time tracking and effort summary for the current user across tasks | — |
+| `meeting_agenda_generator` | Generate a structured meeting agenda based on current tasks, blockers, and project status | `meetingType` (optional): `standup`, `sprint_review`, `planning`, `retrospective`, `stakeholder_update` |
+| `retrospective_summary` | Generate a sprint or project retrospective: what went well, what did not, and action items | — |
+| `capacity_planning` | Analyse current team workload: identify who is overloaded, who has bandwidth, and suggest task redistribution | — |
+| `project_kickoff` | Generate a project kickoff checklist with role assignments, initial tasks, and success criteria | — |
+| `blockers_escalation` | Identify critical blockers and draft escalation messages for items requiring management attention | — |
+| `milestone_review` | Review progress toward project milestones: completed work, at-risk items, and recommended adjustments | — |
+| `team_workload_balancer` | Show each team member's task load and suggest reassignments to balance workload evenly | — |
+
+---
+
+## Available Resources
+
+The Astravue MCP Server provides **6 resources** — context data that AI assistants can attach to conversations for richer, more accurate responses.
+
+### Static Resources
+
+| Resource URI | Name | Description |
+| :----------- | :--- | :---------- |
+| `astravue://user/me` | Current User Profile | The authenticated user's profile: ID, name, email, and organisation role. Read at session start to establish user context before assigning tasks or personalising any response. |
+| `astravue://org/members` | Organisation Members | All active members of the organisation with user IDs, names, emails, and roles. Use to resolve teammate names to numeric IDs before any task assignment operation. |
+| `astravue://org/spaces` | Organisation Spaces | All spaces the current user is a member of. Use to discover space IDs before calling project or task tools. |
+| `astravue://dashboard/overview` | Dashboard Overview | Current user's task count summary: total, pending, completed, and overdue. Use for a quick org health snapshot. |
+
+### Resource Templates
+
+| Template URI | Name | Description |
+| :----------- | :--- | :---------- |
+| `astravue://spaces/{spaceId}/projects` | Projects in Space | All projects within a given space. Replace `{spaceId}` with the numeric space ID. |
+| `astravue://spaces/{spaceId}/projects/{projectId}/overview` | Project Overview | Full details of a specific project. Replace `{spaceId}` and `{projectId}` with numeric IDs. |
+
 
 ---
 
