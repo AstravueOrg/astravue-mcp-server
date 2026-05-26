@@ -4,6 +4,7 @@
 
 <p align="center">
   <a href="https://astravue.com"><img src="https://img.shields.io/badge/Website-astravue.com-1f8f75?style=flat&labelColor=555" alt="Website"></a>
+  <a href="https://docs.astravue.com"><img src="https://img.shields.io/badge/Docs-docs.astravue.com-0ea5e9?style=flat&labelColor=555" alt="Documentation"></a>
   <a href="https://github.com/AstravueOrg/astravue-mcp-server/releases/latest"><img src="https://img.shields.io/github/v/release/AstravueOrg/astravue-mcp-server?label=release&style=flat&labelColor=555" alt="Latest release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-Apache--2.0-7cb342?style=flat&labelColor=555" alt="Apache License 2.0"></a>
   <a href="https://registry.modelcontextprotocol.io/?q=astravue"><img src="https://img.shields.io/badge/MCP%20Registry-official-2563eb?style=flat&labelColor=555" alt="Official MCP Registry"></a>
@@ -20,6 +21,12 @@
 
 # Astravue MCP Server
 
+<p align="center">
+  <video src="https://github.com/AstravueOrg/astravue-mcp-server/raw/main/assets/mcp_launch.mp4" controls width="720" muted playsinline>
+    Your browser does not support inline video. <a href="assets/mcp_launch.mp4">Download the demo (MP4)</a>.
+  </video>
+</p>
+
 The Astravue MCP Server is a cloud-based bridge between your [Astravue](https://astravue.com) workspace and compatible AI tools. Once configured, it enables those tools to interact with your spaces, projects, tasks, time entries, and custom fields in real time. All actions are authenticated via OAuth 2.0 and respect the user's existing access controls.
 
 With the Astravue MCP Server, you can:
@@ -31,6 +38,8 @@ With the Astravue MCP Server, you can:
 * **Automate workflows** like sprint planning, status reporting, and bulk task updates.
 
 It's designed for project managers, developers, and teams who use AI-powered IDEs or assistants and want to manage work without context switching.
+
+Full product documentation lives at **[docs.astravue.com](https://docs.astravue.com)**.
 
 ---
 
@@ -58,15 +67,43 @@ You will be asked to sign in to Astravue in your browser the first time you conn
 
 ### Claude Code
 
-Run the following command in your terminal:
+You have two installation options. **Option A** installs the full plugin (MCP server + four productivity skills). **Option B** installs only the MCP server.
+
+#### Option A — Install as a Claude Code plugin (recommended)
+
+The plugin bundles the MCP server with four pre-built skills: `sprint-planning`, `generating-status-report`, `tracking-time`, and `managing-custom-fields`. It is listed in Anthropic's community plugin marketplace.
+
+Inside Claude Code, run:
+
+```text
+/plugin marketplace add anthropics/claude-plugins-community
+/plugin install astravue@claude-community
+/reload-plugins
+```
+
+Alternatively, install directly from this repository:
+
+```text
+/plugin marketplace add AstravueOrg/astravue-mcp-server
+/plugin install astravue@astravue
+/reload-plugins
+```
+
+After install, run `/mcp` to confirm **astravue** is connected, then open `/plugin` and switch to the **Installed** tab to view the bundled skills.
+
+See Anthropic's [plugin discovery docs](https://code.claude.com/docs/en/discover-plugins) for installation scopes (user, project, local).
+
+#### Option B — Install only the MCP server
+
+If you only want the raw MCP server without the bundled skills, run:
 
 ```bash
-claude mcp add --transport http astravue-mcp https://api.astravue.com/mcp
+claude mcp add --transport http astravue https://api.astravue.com/mcp
 ```
 
 Your browser will open automatically. Sign in with your Astravue account and click **Approve**.
 
-To confirm the connection, run `/mcp` in a new Claude Code session. You should see **astravue-mcp** listed with a green connected status.
+To confirm the connection, run `/mcp` in a new Claude Code session. You should see **astravue** listed with a green connected status.
 
 <details>
 <summary>Share connection across a project team</summary>
@@ -74,7 +111,7 @@ To confirm the connection, run `/mcp` in a new Claude Code session. You should s
 Add the `--scope project` flag to create a `.mcp.json` file in your project root:
 
 ```bash
-claude mcp add --transport http --scope project astravue-mcp https://api.astravue.com/mcp
+claude mcp add --transport http --scope project astravue https://api.astravue.com/mcp
 ```
 
 Commit `.mcp.json` to your repository so teammates automatically get the connection.
