@@ -17,6 +17,16 @@ The format is based on Keep a Changelog.
 
 - No unreleased public functionality changes recorded yet.
 
+## [1.0.2] - 2026-05-26
+
+### Added
+
+- Documented the Claude Code plugin install path so users can install Astravue from Anthropic's community plugin marketplace alongside the existing raw MCP setup.
+
+### Changed
+
+- Aligned the published version metadata across the Claude, Cursor, and Gemini client manifests for consistent client recognition of the `1.0.2` release.
+
 ## [1.0.1] - 2026-04-23
 
 ### Added

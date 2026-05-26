@@ -1,6 +1,6 @@
 {
   "name": "astravue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "mcpServers": {
     "astravue": {
       "url": "https://api.astravue.com/mcp"
