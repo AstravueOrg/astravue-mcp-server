@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.astravue/astravue-mcp",
+  "description": "Manage projects, tasks, time tracking, and team collaboration through natural language.",
+  "title": "Astravue MCP",
+  "repository": {
+    "url": "https://github.com/AstravueOrg/astravue-mcp-server",
+    "source": "github"
+  },
+  "version": "1.0.2",
+  "websiteUrl": "https://astravue.com",
+  "icons": [
+    {
+      "src": "https://app.astravue.com/astravue-1.svg"
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.astravue.com/mcp"
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "categories": [
+        "project-management",
+        "productivity",
+        "collaboration"
+      ],
+      "logo": "https://app.astravue.com/astravue-1.svg",
+      "privacy_policy": "https://astravue.com/privacy-policy",
+      "support_url": "https://help.astravue.com",
+      "terms_of_service": "https://astravue.com/terms-and-conditions"
+    }
+  }
+}
