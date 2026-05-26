@@ -22,9 +22,11 @@
 # Astravue MCP Server
 
 <p align="center">
-  <video src="https://github.com/AstravueOrg/astravue-mcp-server/raw/main/assets/mcp_launch.mp4" controls width="720" muted playsinline>
-    Your browser does not support inline video. <a href="assets/mcp_launch.mp4">Download the demo (MP4)</a>.
-  </video>
+  <a href="https://github.com/AstravueOrg/astravue-mcp-server/releases/download/v1.0.2/mcp_launch.mp4">
+    <img src="assets/mcp_launch.gif" alt="Astravue MCP demo" width="720">
+  </a>
+  <br>
+  <em>Click the image to download the full demo (with audio).</em>
 </p>
 
 The Astravue MCP Server is a cloud-based bridge between your [Astravue](https://astravue.com) workspace and compatible AI tools. Once configured, it enables those tools to interact with your spaces, projects, tasks, time entries, and custom fields in real time. All actions are authenticated via OAuth 2.0 and respect the user's existing access controls.
