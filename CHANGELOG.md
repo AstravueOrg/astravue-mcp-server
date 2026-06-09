@@ -17,6 +17,15 @@ The format is based on Keep a Changelog.
 
 - No unreleased public functionality changes recorded yet.
 
+## [1.0.3] - 2026-06-09
+
+### Added
+
+- **breaking-down-work** skill — decomposes a goal, feature, epic, or deliverable into a structured task tree (tasks, subtasks, checklists) with dependencies in Astravue.
+- **capturing-meeting-actions** skill — extracts action items from meeting notes, transcripts, or brain dumps and creates them as owned, dated tasks in Astravue.
+- **mapping-dependencies** skill — maps task dependencies in an Astravue project, finds the critical path and blocked work, and detects circular dependencies.
+- **triaging-overdue-work** skill — reviews overdue and at-risk tasks, assesses why each is slipping, and proposes reschedule, reassign, deprioritize, or close actions.
+
 ## [1.0.2] - 2026-05-26
 
 ### Added
