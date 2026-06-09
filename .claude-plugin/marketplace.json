@@ -10,7 +10,7 @@
     {
       "name": "astravue",
       "description": "Connect to Astravue project management. Manage spaces, projects, tasks, subtasks, checklists, comments, time tracking, and team collaboration through natural language.",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "author": {
         "name": "Astravue",
         "email": "support@astravue.com"
