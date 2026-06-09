@@ -69,11 +69,11 @@ You will be asked to sign in to Astravue in your browser the first time you conn
 
 ### Claude Code
 
-You have two installation options. **Option A** installs the full plugin (MCP server + four productivity skills). **Option B** installs only the MCP server.
+You have two installation options. **Option A** installs the full plugin (MCP server + eight productivity skills). **Option B** installs only the MCP server.
 
 #### Option A — Install as a Claude Code plugin (recommended)
 
-The plugin bundles the MCP server with four pre-built skills: `sprint-planning`, `generating-status-report`, `tracking-time`, and `managing-custom-fields`. It is listed in Anthropic's community plugin marketplace.
+The plugin bundles the MCP server with eight pre-built skills that automate common project management workflows. It is listed in Anthropic's community plugin marketplace.
 
 Inside Claude Code, run:
 
@@ -695,6 +695,10 @@ This repository includes ready-to-use skills that automate common project manage
 | [Status Report](skills/generating-status-report/SKILL.md) | Generates executive project status reports covering progress, budget, and risks |
 | [Time Tracking](skills/tracking-time/SKILL.md) | Guides timer usage, manual time logging, and timesheet report generation |
 | [Custom Fields](skills/managing-custom-fields/SKILL.md) | Creates, configures, and manages custom fields and dropdown options |
+| [Breaking Down Work](skills/breaking-down-work/SKILL.md) | Decomposes a goal, feature, or epic into a structured task tree with dependencies |
+| [Capturing Meeting Actions](skills/capturing-meeting-actions/SKILL.md) | Extracts action items from meeting notes or transcripts and creates owned, dated tasks |
+| [Mapping Dependencies](skills/mapping-dependencies/SKILL.md) | Maps task dependencies, finds the critical path, and detects circular dependencies |
+| [Triaging Overdue Work](skills/triaging-overdue-work/SKILL.md) | Reviews overdue and at-risk tasks and proposes reschedule, reassign, or close actions |
 
 Skills are available automatically when using the Claude Code or Cursor plugin.
 
