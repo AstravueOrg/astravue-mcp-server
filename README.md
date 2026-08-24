@@ -12,7 +12,7 @@
   <a href="https://vibehackers.io/mcp/astravue-mcp"><img src="https://img.shields.io/badge/Vibehackers-listed-111827?style=flat&labelColor=555" alt="Listed on Vibehackers"></a>
   <a href="https://mcpmarket.com/server/astravue"><img src="https://img.shields.io/badge/MCP%20Market-listed-0f766e?style=flat&labelColor=555" alt="Listed on MCP Market"></a>
   <a href="https://glama.ai/mcp/servers?query=astravue"><img src="https://img.shields.io/badge/Glama.ai-listed-0ea5e9?style=flat&labelColor=555" alt="Listed on Glama.ai"></a>
-  <a href="https://claude.com/connectors"><img src="https://img.shields.io/badge/Claude%20Connector-verified-d97757?style=flat&labelColor=555" alt="Verified Claude Connector"></a>
+  <a href="https://claude.ai/directory/astravue"><img src="https://img.shields.io/badge/Claude%20Connector-verified-d97757?style=flat&labelColor=555" alt="Verified Claude Connector"></a>
   <a href=".claude-plugin/marketplace.json"><img src="https://img.shields.io/badge/Claude%20Code-plugin-d97757?style=flat&labelColor=555" alt="Claude Code plugin"></a>
 </p>
 
@@ -44,7 +44,7 @@ It's designed for project managers, developers, and teams who use AI-powered IDE
 
 Full product documentation lives at **[docs.astravue.com](https://docs.astravue.com)**.
 
-Astravue is a verified and reviewed integration in the **[Claude Connectors Directory](https://claude.com/connectors)**.
+Astravue is a verified and reviewed integration in the **[Claude Connectors Directory](https://claude.ai/directory/astravue)**.
 
 ---
 
