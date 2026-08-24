@@ -12,6 +12,7 @@
   <a href="https://vibehackers.io/mcp/astravue-mcp"><img src="https://img.shields.io/badge/Vibehackers-listed-111827?style=flat&labelColor=555" alt="Listed on Vibehackers"></a>
   <a href="https://mcpmarket.com/server/astravue"><img src="https://img.shields.io/badge/MCP%20Market-listed-0f766e?style=flat&labelColor=555" alt="Listed on MCP Market"></a>
   <a href="https://glama.ai/mcp/servers?query=astravue"><img src="https://img.shields.io/badge/Glama.ai-listed-0ea5e9?style=flat&labelColor=555" alt="Listed on Glama.ai"></a>
+  <a href="https://claude.com/connectors"><img src="https://img.shields.io/badge/Claude%20Connector-verified-d97757?style=flat&labelColor=555" alt="Verified Claude Connector"></a>
   <a href=".claude-plugin/marketplace.json"><img src="https://img.shields.io/badge/Claude%20Code-plugin-d97757?style=flat&labelColor=555" alt="Claude Code plugin"></a>
 </p>
 
@@ -43,6 +44,8 @@ It's designed for project managers, developers, and teams who use AI-powered IDE
 
 Full product documentation lives at **[docs.astravue.com](https://docs.astravue.com)**.
 
+Astravue is a verified and reviewed integration in the **[Claude Connectors Directory](https://claude.com/connectors)**.
+
 ---
 
 ## Supported Clients
@@ -53,9 +56,9 @@ You will be asked to sign in to Astravue in your browser the first time you conn
 | Client | Docs | Transport |
 | :----- | :--- | :-------- |
 | [Claude Code](#claude-code) | [MCP setup](https://code.claude.com/docs/en/mcp) | Streamable HTTP |
-| [Claude Desktop](#claude-desktop) | [MCP setup](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop) | Streamable HTTP |
-| [Claude.ai (Web)](#claudeai-web) | [Remote MCP](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp) | Streamable HTTP |
-| [Claude Mobile](#claude-mobile-ios--android) | — | Streamable HTTP |
+| [Claude Desktop](#claude-desktop) | [Connectors Directory](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) | Streamable HTTP |
+| [Claude.ai (Web)](#claudeai-web) | [Connectors Directory](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) | Streamable HTTP |
+| [Claude Mobile](#claude-mobile-ios--android) | [Connectors Directory](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) | Streamable HTTP |
 | [Cursor](#cursor) | [MCP setup](https://docs.cursor.com/context/model-context-protocol) | Streamable HTTP |
 | [VS Code](#vs-code) | [MCP setup](https://code.visualstudio.com/docs/copilot/customization/mcp-servers) | Streamable HTTP |
 | [Windsurf](#windsurf) | [MCP setup](https://docs.windsurf.com/windsurf/cascade/mcp) | Streamable HTTP |
@@ -67,9 +70,22 @@ You will be asked to sign in to Astravue in your browser the first time you conn
 
 ## Setup Instructions
 
+### Claude Connectors Directory (recommended)
+
+Astravue is available as a verified connector across Claude.ai, Claude Desktop, Claude Mobile, Claude Code, and Cowork.
+
+1. In Claude.ai or Claude Desktop, go to **Customize → Connectors**.
+2. Click **+**, browse the Connectors Directory, and search for **Astravue**.
+3. Select **Astravue**, click **Connect**, then sign in to Astravue and approve access.
+4. Start a new conversation and enable Astravue from the **+ → Connectors** menu.
+
+When Claude Code is authenticated with your Claude.ai subscription, the connector is available automatically. Run `/mcp` to confirm it is connected. Claude Code sessions using an API key, Bedrock, or Vertex do not load Claude.ai connectors; use the direct connection command below instead.
+
+---
+
 ### Claude Code
 
-You have two installation options. **Option A** installs the full plugin (MCP server + eight productivity skills). **Option B** installs only the MCP server.
+The Connectors Directory provides the verified MCP connection. For eight guided project-management workflows as well, install the Astravue plugin. A direct MCP connection remains available for API-key, Bedrock, Vertex, and custom setups.
 
 #### Option A — Install as a Claude Code plugin (recommended)
 
@@ -124,11 +140,9 @@ Commit `.mcp.json` to your repository so teammates automatically get the connect
 
 ### Claude Desktop
 
-> Requires a Claude Pro, Max, Team, or Enterprise plan.
-
-1. Go to **Settings → Connectors** in Claude Desktop.
-2. Click **Add custom connector** and enter: `https://api.astravue.com/mcp`
-3. Sign in with your Astravue account in the browser and click **Approve**.
+1. Go to **Customize → Connectors** in Claude Desktop.
+2. Click **+**, browse the directory, and search for **Astravue**.
+3. Select **Astravue**, click **Connect**, then sign in and approve access.
 
 <details>
 <summary>Manual config file setup (advanced)</summary>
@@ -158,19 +172,15 @@ Save the file and restart Claude Desktop.
 
 ### Claude.ai (Web)
 
-> Requires a Claude Pro, Max, Team, or Enterprise plan.
-
-1. Go to [claude.ai](https://claude.ai) → **Settings → Connectors**
-2. Click **Add connector** and enter: `https://api.astravue.com/mcp`
-3. Sign in with your Astravue account in the browser and click **Approve**.
+1. Go to [claude.ai](https://claude.ai) → **Customize → Connectors**.
+2. Click **+**, browse the directory, and search for **Astravue**.
+3. Select **Astravue**, click **Connect**, then sign in and approve access.
 
 ---
 
 ### Claude Mobile (iOS / Android)
 
-Claude Mobile uses the same connector ecosystem as Claude.ai.
-
-Add the connector on **Claude.ai (web)** or **Claude Desktop** first — it will automatically appear on your mobile app. No separate setup needed.
+Claude Mobile uses the same connector ecosystem as Claude.ai. Connect Astravue from the mobile Connectors Directory, or connect it once on Claude.ai or Claude Desktop and use the same Claude account on mobile.
 
 ---
 
