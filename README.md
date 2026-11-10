@@ -64,7 +64,12 @@ You will be asked to sign in to Astravue in your browser the first time you conn
 | [Windsurf](#windsurf) | [MCP setup](https://docs.windsurf.com/windsurf/cascade/mcp) | Streamable HTTP |
 | [Cline](#cline) | [MCP setup](https://docs.cline.bot/mcp/configuring-mcp-servers) | Streamable HTTP |
 | [JetBrains IDEs](#jetbrains-intellij-webstorm-pycharm-etc) | [MCP setup](https://www.jetbrains.com/help/ai-assistant/mcp.html) | Streamable HTTP |
+| [Codex](#codex) | [MCP setup](https://learn.chatgpt.com/docs/extend/mcp) | Streamable HTTP |
+| [GitHub Copilot CLI](#github-copilot-cli) | [MCP setup](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers) | Streamable HTTP |
 | [Gemini CLI](#gemini-cli) | [MCP setup](https://geminicli.com/docs/tools/mcp-server/) | Streamable HTTP |
+| [ChatGPT](#chatgpt) | [Custom MCP servers](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt) | Streamable HTTP |
+| [Perplexity](#perplexity) | [Custom remote connectors](https://www.perplexity.ai/help-center/en/articles/13915507-adding-custom-remote-connectors) | Streamable HTTP |
+| [Mistral Le Chat](#mistral-le-chat) | Coming soon | — |
 
 ---
 
@@ -324,9 +329,149 @@ Click **Configure MCP Servers** in the Configure tab to open `cline_mcp_settings
 
 ---
 
+### Codex
+
+Works in the Codex CLI, the Codex IDE extension, and the ChatGPT desktop app — they share `~/.codex/config.toml`.
+
+1. Add the server:
+
+```bash
+codex mcp add astravue-mcp --url https://api.astravue.com/mcp
+```
+
+2. Sign in:
+
+```bash
+codex mcp login astravue-mcp
+```
+
+Your browser will open — sign in with your Astravue account and click **Approve**.
+
+3. Run `/mcp` in Codex to confirm `astravue-mcp` is connected.
+
+<details>
+<summary>Configure in config.toml instead</summary>
+
+Add this to `~/.codex/config.toml`, or to `.codex/config.toml` in a trusted project to scope it to that project:
+
+```toml
+[mcp_servers.astravue-mcp]
+url = "https://api.astravue.com/mcp"
+```
+
+Then run `codex mcp login astravue-mcp`.
+
+</details>
+
+---
+
+### GitHub Copilot CLI
+
+Run:
+
+```bash
+copilot mcp add --transport http astravue-mcp https://api.astravue.com/mcp
+```
+
+<details>
+<summary>Manual JSON configuration</summary>
+
+Add this to `~/.copilot/mcp-config.json`:
+
+```json
+{
+  "mcpServers": {
+    "astravue-mcp": {
+      "type": "http",
+      "url": "https://api.astravue.com/mcp",
+      "tools": ["*"]
+    }
+  }
+}
+```
+
+</details>
+
+---
+
 ### Gemini CLI
 
-Copy `gemini-extension.json` from this repository to your Gemini CLI extensions directory, or add the server URL to your Gemini MCP configuration.
+1. Install the Astravue extension from this repository:
+
+```bash
+gemini extensions install https://github.com/AstravueOrg/astravue-mcp-server
+```
+
+2. Start Gemini CLI and sign in:
+
+```text
+/mcp auth astravue
+```
+
+Your browser will open — sign in with your Astravue account and click **Approve**.
+
+<details>
+<summary>Manual configuration (settings.json)</summary>
+
+Add this to `~/.gemini/settings.json`, then run `/mcp auth astravue-mcp`:
+
+```json
+{
+  "mcpServers": {
+    "astravue-mcp": {
+      "httpUrl": "https://api.astravue.com/mcp"
+    }
+  }
+}
+```
+
+</details>
+
+---
+
+### ChatGPT
+
+> Custom MCP servers are available on ChatGPT Business and Enterprise/Edu, on chatgpt.com. Workspace admins and owners create the app and publish it to the workspace.
+
+1. Go to **Plugins**, select **+**, then **Add custom MCP server**.
+2. Enter the name `Astravue`.
+3. Under **Connection**, enter `https://api.astravue.com/mcp`.
+4. Set authentication to **OAuth**.
+5. Select **I understand and want to continue**, then **Create as a plugin**.
+6. Sign in with your Astravue account and click **Approve**.
+7. In a chat, select **Astravue** for the message, or @mention it.
+
+<details>
+<summary>ChatGPT desktop app</summary>
+
+Open **Settings → MCP servers → Add server**, enter the name `astravue-mcp`, choose **Streamable HTTP**, and enter `https://api.astravue.com/mcp`. Restart, then select **Authenticate** and sign in to Astravue.
+
+</details>
+
+---
+
+### Perplexity
+
+1. Open **Plugins** in the sidebar and select **Add custom**.
+2. Enter the name `Astravue` and the MCP server URL `https://api.astravue.com/mcp`.
+3. Under **Advanced settings**, choose **OAuth**, select the acknowledgement checkbox, and click **Add**.
+4. Sign in with your Astravue account and click **Approve**.
+5. Ask Perplexity something Astravue can do, for example *"show my open tasks"*.
+
+In an organization, an administrator must first turn on **Allow members to add custom connectors**.
+
+<details>
+<summary>Connected, but no tools are listed</summary>
+
+Perplexity does not always list the tools of a custom connector. The connection still works — ask for Astravue actions directly in chat, such as *"list my Astravue spaces"*.
+
+</details>
+
+---
+
+### Mistral Le Chat
+
+Coming soon.
 
 ---
 
