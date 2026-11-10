@@ -8,6 +8,8 @@
     "url": "https://astravue.com"
   },
   "homepage": "https://astravue.com/mcp-server/",
+  "icon": "./assets/logo.png",
+  "documentationUrl": "https://docs.astravue.com/get-started-2031000m0",
   "privacyPolicyUrl": "https://astravue.com/privacy-policy/",
   "termsOfServiceUrl": "https://astravue.com/terms-and-conditions/",
   "supportUrl": "https://help.astravue.com/portal/en/kb",
