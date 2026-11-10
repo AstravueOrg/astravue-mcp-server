@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "keywords": ["project-management", "tasks", "time-tracking", "mcp", "collaboration", "teams"],
   "logo": "assets/logo.svg",
-  "homepage": "https://astravue.com",
+  "homepage": "https://astravue.com/mcp-server/",
   "repository": "https://github.com/AstravueOrg/astravue-mcp-server",
   "mcp": "./.mcp.json",
   "skills": "./skills/"

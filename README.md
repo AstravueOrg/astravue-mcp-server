@@ -42,7 +42,7 @@ With the Astravue MCP Server, you can:
 
 It's designed for project managers, developers, and teams who use AI-powered IDEs or assistants and want to manage work without context switching.
 
-Full product documentation lives at **[docs.astravue.com](https://docs.astravue.com)**.
+Learn more at **[astravue.com/mcp-server](https://astravue.com/mcp-server/)**. Setup steps for each client are [below](#setup-instructions); full product documentation lives at **[docs.astravue.com](https://docs.astravue.com)**.
 
 Astravue is a verified and reviewed integration in the **[Claude Connectors Directory](https://claude.ai/directory/astravue)**.
 
