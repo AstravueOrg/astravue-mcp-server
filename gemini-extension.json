@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "mcpServers": {
     "astravue": {
-      "url": "https://api.astravue.com/mcp"
+      "httpUrl": "https://api.astravue.com/mcp"
     }
   }
 }
