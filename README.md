@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo-full.svg" alt="Astravue" width="300">
+  <img src="assets/logo-full.png" alt="Astravue" width="300">
 </p>
 
 <p align="center">
