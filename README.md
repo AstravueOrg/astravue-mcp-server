@@ -59,17 +59,23 @@ You will be asked to sign in to Astravue in your browser the first time you conn
 | [Claude Desktop](#claude-desktop) | [Connectors Directory](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) | Streamable HTTP |
 | [Claude.ai (Web)](#claudeai-web) | [Connectors Directory](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) | Streamable HTTP |
 | [Claude Mobile](#claude-mobile-ios--android) | [Connectors Directory](https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities) | Streamable HTTP |
-| [Cursor](#cursor) | [MCP setup](https://docs.cursor.com/context/model-context-protocol) | Streamable HTTP |
-| [VS Code](#vs-code) | [MCP setup](https://code.visualstudio.com/docs/copilot/customization/mcp-servers) | Streamable HTTP |
-| [Windsurf](#windsurf) | [MCP setup](https://docs.windsurf.com/windsurf/cascade/mcp) | Streamable HTTP |
-| [Cline](#cline) | [MCP setup](https://docs.cline.bot/mcp/configuring-mcp-servers) | Streamable HTTP |
-| [JetBrains IDEs](#jetbrains-intellij-webstorm-pycharm-etc) | [MCP setup](https://www.jetbrains.com/help/ai-assistant/mcp.html) | Streamable HTTP |
+| [Cursor](#cursor) | [MCP setup](https://cursor.com/docs/context/mcp) | Streamable HTTP |
+| [VS Code](#vs-code) | [MCP setup](https://code.visualstudio.com/docs/agents/reference/mcp-configuration) | Streamable HTTP |
+| [Devin Desktop (Windsurf)](#devin-desktop-windsurf) | [MCP setup](https://docs.devin.ai/desktop/cascade/mcp) | Streamable HTTP |
+| [Cline](#cline) | [MCP setup](https://docs.cline.bot/mcp/adding-and-configuring-servers) | Streamable HTTP |
+| [JetBrains IDEs](#jetbrains-intellij-webstorm-pycharm-etc) | [MCP setup](https://www.jetbrains.com/help/ai-assistant/configure-an-mcp-server.html) | Streamable HTTP |
+| [Google Antigravity](#google-antigravity) | [MCP setup](https://antigravity.google/docs/mcp/) | Streamable HTTP |
+| [Kiro](#kiro) | [MCP setup](https://kiro.dev/docs/mcp/configuration/) | Streamable HTTP |
+| [Zed](#zed) | [MCP setup](https://zed.dev/docs/ai/mcp) | Streamable HTTP |
 | [Codex](#codex) | [MCP setup](https://learn.chatgpt.com/docs/extend/mcp) | Streamable HTTP |
 | [GitHub Copilot CLI](#github-copilot-cli) | [MCP setup](https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers) | Streamable HTTP |
 | [Gemini CLI](#gemini-cli) | [MCP setup](https://geminicli.com/docs/tools/mcp-server/) | Streamable HTTP |
 | [ChatGPT](#chatgpt) | [Custom MCP servers](https://help.openai.com/en/articles/12584461-connecting-custom-mcp-servers-in-chatgpt) | Streamable HTTP |
 | [Perplexity](#perplexity) | [Custom remote connectors](https://www.perplexity.ai/help-center/en/articles/13915507-adding-custom-remote-connectors) | Streamable HTTP |
-| [Mistral Le Chat](#mistral-le-chat) | Coming soon | — |
+| [Grok](#grok) | [Connectors](https://docs.x.ai/grok/connectors) | Streamable HTTP |
+| [Muse](#muse) | [Connectors](https://www.meta.com/help/artificial-intelligence/1687253048996149/) | Streamable HTTP |
+| [Zoho Zia Agents](#zoho-zia-agents) | [Zia Agents](https://www.zoho.com/agents/) | Streamable HTTP |
+| [Mistral Vibe (Le Chat)](#mistral-vibe-le-chat) | Coming soon | — |
 
 ---
 
@@ -77,20 +83,20 @@ You will be asked to sign in to Astravue in your browser the first time you conn
 
 ### Claude Connectors Directory (recommended)
 
-Astravue is available as a verified connector across Claude.ai, Claude Desktop, Claude Mobile, Claude Code, and Cowork.
+Astravue App is a verified connector across Claude.ai, Claude Desktop, Claude Mobile, Claude Code, and Cowork.
 
 1. In Claude.ai or Claude Desktop, go to **Customize → Connectors**.
-2. Click **+**, browse the Connectors Directory, and search for **Astravue**.
-3. Select **Astravue**, click **Connect**, then sign in to Astravue and approve access.
-4. Start a new conversation and enable Astravue from the **+ → Connectors** menu.
+2. Click **+**, browse the Connectors Directory, and search for **Astravue App**.
+3. Select **Astravue App**, click **Connect**, then sign in to Astravue and click **Allow Access**.
+4. Start a new conversation and enable Astravue App from the **+ → Connectors** menu.
 
-When Claude Code is authenticated with your Claude.ai subscription, the connector is available automatically. Run `/mcp` to confirm it is connected. Claude Code sessions using an API key, Bedrock, or Vertex do not load Claude.ai connectors; use the direct connection command below instead.
+When Claude Code is signed in with your Claude.ai subscription, the connector is available automatically. Run `/mcp` to confirm it is connected. Claude Code sessions using an API key, Amazon Bedrock or Google Cloud do not load Claude.ai connectors; use the direct connection command below instead.
 
 ---
 
 ### Claude Code
 
-The Connectors Directory provides the verified MCP connection. For eight guided project-management workflows as well, install the Astravue plugin. A direct MCP connection remains available for API-key, Bedrock, Vertex, and custom setups.
+The Connectors Directory provides the verified MCP connection. For eight guided project-management workflows as well, install the Astravue plugin. A direct MCP connection remains available for API-key, Amazon Bedrock, Google Cloud and custom setups.
 
 #### Option A — Install as a Claude Code plugin (recommended)
 
@@ -103,6 +109,8 @@ Inside Claude Code, run:
 /plugin install astravue@claude-community
 /reload-plugins
 ```
+
+In a session, `/plugin install` opens the plugin's details first. Choose an install scope there to finish.
 
 Alternatively, install directly from this repository:
 
@@ -118,15 +126,13 @@ See Anthropic's [plugin discovery docs](https://code.claude.com/docs/en/discover
 
 #### Option B — Install only the MCP server
 
-If you only want the raw MCP server without the bundled skills, run:
+If you only want the MCP server without the bundled skills, run:
 
 ```bash
 claude mcp add --transport http astravue https://api.astravue.com/mcp
 ```
 
-Your browser will open automatically. Sign in with your Astravue account and click **Approve**.
-
-To confirm the connection, run `/mcp` in a new Claude Code session. You should see **astravue** listed with a green connected status.
+Start Claude Code and run `/mcp`. Select **astravue**, choose **Authenticate**, then sign in with your Astravue account and click **Allow Access**. Run `/mcp` again to confirm **astravue** is connected.
 
 <details>
 <summary>Share connection across a project team</summary>
@@ -146,54 +152,29 @@ Commit `.mcp.json` to your repository so teammates automatically get the connect
 ### Claude Desktop
 
 1. Go to **Customize → Connectors** in Claude Desktop.
-2. Click **+**, browse the directory, and search for **Astravue**.
-3. Select **Astravue**, click **Connect**, then sign in and approve access.
-
-<details>
-<summary>Manual config file setup (advanced)</summary>
-
-If Connectors is not available in your Claude Desktop version, edit:
-
-**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
-
-**Windows:** `%APPDATA%\Claude\claude_desktop_config.json`
-
-```json
-{
-  "mcpServers": {
-    "astravue-mcp": {
-      "type": "http",
-      "url": "https://api.astravue.com/mcp"
-    }
-  }
-}
-```
-
-Save the file and restart Claude Desktop.
-
-</details>
+2. Click **+**, browse the directory, and search for **Astravue App**.
+3. Select **Astravue App**, click **Connect**, then sign in and approve access.
 
 ---
 
 ### Claude.ai (Web)
 
 1. Go to [claude.ai](https://claude.ai) → **Customize → Connectors**.
-2. Click **+**, browse the directory, and search for **Astravue**.
-3. Select **Astravue**, click **Connect**, then sign in and approve access.
+2. Click **+**, browse the directory, and search for **Astravue App**.
+3. Select **Astravue App**, click **Connect**, then sign in and approve access.
 
 ---
 
 ### Claude Mobile (iOS / Android)
 
-Claude Mobile uses the same connector ecosystem as Claude.ai. Connect Astravue from the mobile Connectors Directory, or connect it once on Claude.ai or Claude Desktop and use the same Claude account on mobile.
+Claude Mobile uses the same connector ecosystem as Claude.ai. Connect Astravue App from the mobile Connectors Directory, or connect it once on Claude.ai or Claude Desktop and use the same Claude account on mobile.
 
 ---
 
 ### Cursor
 
-1. Go to **Cursor Settings → Tools & MCP**
-2. Click **New MCP Server** — this opens your `mcp.json` file
-3. Add the following configuration:
+1. Open `~/.cursor/mcp.json` (create it if it doesn't exist). You can also manage MCP servers from Cursor's **Customize** page.
+2. Add the following configuration and save the file:
 
 ```json
 {
@@ -205,7 +186,7 @@ Claude Mobile uses the same connector ecosystem as Claude.ai. Connect Astravue f
 }
 ```
 
-4. Save the file. Your browser will open — sign in with your Astravue account and click **Approve**.
+3. When Cursor asks, sign in with your Astravue account and click **Allow Access**.
 
 <details>
 <summary>Project-level configuration</summary>
@@ -218,11 +199,11 @@ Create a `.cursor/mcp.json` file in your project root with the same config above
 
 ### VS Code
 
-1. Add a `.vscode/mcp.json` file to your project root:
+1. Add a `.mcp.json` file to your workspace root:
 
 ```json
 {
-  "servers": {
+  "mcpServers": {
     "astravue-mcp": {
       "type": "http",
       "url": "https://api.astravue.com/mcp"
@@ -231,39 +212,106 @@ Create a `.cursor/mcp.json` file in your project root with the same config above
 }
 ```
 
-2. Open Command Palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Windows), run **MCP: List Servers**, and click **Start** next to `astravue-mcp`.
-3. Authenticate with your Astravue account in the browser.
+2. Open the Command Palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Windows), run **MCP: List Servers**, select `astravue-mcp` and choose **Start Server**.
+3. Sign in with your Astravue account in the browser and click **Allow Access**.
 
 <details>
-<summary>User-level configuration (all projects)</summary>
+<summary>User-level configuration (all workspaces)</summary>
 
-Add this to your **User Settings (JSON)**:
-
-```json
-{
-  "mcp": {
-    "servers": {
-      "astravue-mcp": {
-        "type": "http",
-        "url": "https://api.astravue.com/mcp"
-      }
-    }
-  }
-}
-```
+Add the same `mcpServers` entry to `~/.copilot/mcp-config.json` (or `$COPILOT_HOME/mcp-config.json`). GitHub Copilot CLI reads the same file.
 
 </details>
 
 ---
 
-### Windsurf
+### Devin Desktop (Windsurf)
 
-1. Open the Windsurf MCP config file:
-   * **macOS / Linux:** `~/.codeium/mcp_config.json`
-   * **Windows:** `C:\Users\[username]\.codeium\mcp_config.json`
-   * Or go to **Settings → Tools → Windsurf Settings → Add Server**
+1. Open the Agents window, click **Customize** in the agent sidebar, then open the **MCPs** tab.
+2. Open the MCP config file and add:
 
-2. Add the following:
+```json
+{
+  "mcpServers": {
+    "astravue-mcp": {
+      "url": "https://api.astravue.com/mcp"
+    }
+  }
+}
+```
+
+   * **User config:** `~/.config/devin/mcp_config.json` (Windows: `%APPDATA%\devin\mcp_config.json`)
+   * **One project only:** `.devin/mcp_config.json` in the project root
+
+3. When `astravue-mcp` shows **Needs authentication**, click **Authenticate**, then sign in with your Astravue account and click **Allow Access**.
+
+<details>
+<summary>Devin CLI</summary>
+
+```bash
+devin mcp add -s user astravue-mcp https://api.astravue.com/mcp
+devin mcp login astravue-mcp
+```
+
+The login command opens your browser to sign in to Astravue.
+
+</details>
+
+---
+
+### Cline
+
+1. Click the **MCP Servers** icon (stacked servers) in Cline's top toolbar, open the **Configure** tab and click **Configure MCP Servers**.
+2. Open the **Remote Servers** tab and fill in:
+   * **Server Name:** `astravue-mcp`
+   * **Server URL:** `https://api.astravue.com/mcp`
+   * **Transport Type:** `Streamable HTTP`
+3. Click **Add Server**. When Cline asks, sign in with your Astravue account and click **Allow Access**.
+
+<details>
+<summary>Manual JSON configuration</summary>
+
+Click **Configure MCP Servers** to open `cline_mcp_settings.json` and add:
+
+```json
+{
+  "mcpServers": {
+    "astravue-mcp": {
+      "type": "streamableHttp",
+      "url": "https://api.astravue.com/mcp"
+    }
+  }
+}
+```
+
+Set `type` explicitly. Without it, Cline uses the legacy SSE transport.
+
+</details>
+
+---
+
+### JetBrains (IntelliJ, WebStorm, PyCharm, etc.)
+
+1. Go to **Settings | Tools | AI Assistant | Model Context Protocol (MCP)**.
+2. Click **Add**. In the **New MCP Server** dialog, paste:
+
+```json
+{
+  "mcpServers": {
+    "astravue-mcp": {
+      "url": "https://api.astravue.com/mcp"
+    }
+  }
+}
+```
+
+3. Click **OK**, then **Apply**. When AI Assistant asks, sign in with your Astravue account and click **Allow Access**.
+
+---
+
+### Google Antigravity
+
+1. In the agent side panel, click **…** at the top and select **MCP Servers**. Click **Manage MCP Servers**, then **View raw config**.
+2. This opens `~/.gemini/config/mcp_config.json`. Add the following and save the file:
 
 ```json
 {
@@ -275,45 +323,21 @@ Add this to your **User Settings (JSON)**:
 }
 ```
 
-> If you already have other servers in your config, add `astravue-mcp` alongside them inside the existing `mcpServers` object — don't replace the entire file.
-
-3. Reload Windsurf and authenticate with your Astravue account.
-
----
-
-### Cline
-
-1. Click the **Cline icon** in the VS Code sidebar → click the **menu (⋮)** in the top right → select **MCP Servers**.
-2. Go to the **Remote Servers** tab and fill in:
-   * **Server Name:** `astravue-mcp`
-   * **Server URL:** `https://api.astravue.com/mcp`
-   * **Transport Type:** `Streamable HTTP`
-3. Click **Add Server**. Your browser will open — sign in and click **Approve**.
+3. Antigravity runs the Astravue sign-in for you. Sign in with your Astravue account and click **Allow Access**. If Antigravity asks for an authorization code, copy it from the browser, paste it into **Enter authorization code** and click **Submit**.
 
 <details>
-<summary>Manual JSON configuration</summary>
+<summary>Project-level configuration and Antigravity CLI</summary>
 
-Click **Configure MCP Servers** in the Configure tab to open `cline_mcp_settings.json` and add:
-
-```json
-{
-  "mcpServers": {
-    "astravue-mcp": {
-      "url": "https://api.astravue.com/mcp",
-      "type": "streamableHttp"
-    }
-  }
-}
-```
+To scope Astravue to one project, put the same config in `.agents/mcp_config.json` in the project root. Antigravity CLI reads the same files; type `/mcp` in the CLI to manage servers.
 
 </details>
 
 ---
 
-### JetBrains (IntelliJ, WebStorm, PyCharm, etc.)
+### Kiro
 
-1. Go to **Settings → Tools → AI Assistant → Model Context Protocol (MCP)**
-2. Click **Add** → Select **Streamable HTTP** → Paste:
+1. Open the Command Palette (`Cmd+Shift+P` on macOS, `Ctrl+Shift+P` on Windows) and run **Kiro: Open user MCP config (JSON)**. This opens `~/.kiro/settings/mcp.json`.
+2. Add the following and save the file:
 
 ```json
 {
@@ -325,7 +349,35 @@ Click **Configure MCP Servers** in the Configure tab to open `cline_mcp_settings
 }
 ```
 
-3. Click **OK**, then **Apply**. Sign in with your Astravue account in the browser.
+3. Kiro opens the Astravue sign-in page in your browser. Sign in with your Astravue account and click **Allow Access**.
+
+<details>
+<summary>Workspace configuration</summary>
+
+Run **Kiro: Open workspace MCP config (JSON)** and add the same config to `.kiro/settings/mcp.json`. It applies to the current workspace only and overrides the user config.
+
+</details>
+
+---
+
+### Zed
+
+1. Go to **Settings → AI → MCP Servers**, click **Add Server**, then **Add Remote Server**.
+2. Zed saves the server to your `settings.json`:
+
+```json
+{
+  "context_servers": {
+    "astravue-mcp": {
+      "url": "https://api.astravue.com/mcp"
+    }
+  }
+}
+```
+
+   Don't add an `Authorization` header. Without one, Zed signs you in with OAuth.
+
+3. When Zed asks, sign in with your Astravue account and click **Allow Access**. A green dot next to `astravue-mcp` means it is active.
 
 ---
 
@@ -345,7 +397,7 @@ codex mcp add astravue-mcp --url https://api.astravue.com/mcp
 codex mcp login astravue-mcp
 ```
 
-Your browser will open — sign in with your Astravue account and click **Approve**.
+Your browser will open — sign in with your Astravue account and click **Allow Access**.
 
 3. Run `/mcp` in Codex to confirm `astravue-mcp` is connected.
 
@@ -396,6 +448,8 @@ Add this to `~/.copilot/mcp-config.json`:
 
 ### Gemini CLI
 
+> On 18 June 2026 Google replaced Gemini CLI with Antigravity CLI for unpaid and Google One users. If that applies to you, follow the [Google Antigravity](#google-antigravity) steps.
+
 1. Install the Astravue extension from this repository:
 
 ```bash
@@ -408,7 +462,7 @@ gemini extensions install https://github.com/AstravueOrg/astravue-mcp-server
 /mcp auth astravue
 ```
 
-Your browser will open — sign in with your Astravue account and click **Approve**.
+Your browser will open — sign in with your Astravue account and click **Allow Access**.
 
 <details>
 <summary>Manual configuration (settings.json)</summary>
@@ -431,22 +485,15 @@ Add this to `~/.gemini/settings.json`, then run `/mcp auth astravue-mcp`:
 
 ### ChatGPT
 
-> Custom MCP servers are available on ChatGPT Business and Enterprise/Edu, on chatgpt.com. Workspace admins and owners create the app and publish it to the workspace.
+> Full custom MCP support is on ChatGPT **Business** and **Enterprise/Edu**. **Pro** users can connect custom MCP servers with read and fetch permissions. On Business and Enterprise/Edu, workspace admins and owners create the plugin and publish it to the workspace. Custom MCP servers work on chatgpt.com only, not in the mobile apps.
 
-1. Go to **Plugins**, select **+**, then **Add custom MCP server**.
+1. Go to **Plugins**, select the **+** button, then **Add custom MCP server**.
 2. Enter the name `Astravue`.
 3. Under **Connection**, enter `https://api.astravue.com/mcp`.
 4. Set authentication to **OAuth**.
 5. Select **I understand and want to continue**, then **Create as a plugin**.
-6. Sign in with your Astravue account and click **Approve**.
-7. In a chat, select **Astravue** for the message, or @mention it.
-
-<details>
-<summary>ChatGPT desktop app</summary>
-
-Open **Settings → MCP servers → Add server**, enter the name `astravue-mcp`, choose **Streamable HTTP**, and enter `https://api.astravue.com/mcp`. Restart, then select **Authenticate** and sign in to Astravue.
-
-</details>
+6. Sign in with your Astravue account and click **Allow Access**.
+7. In a chat, type **@** in the prompt box and select **Astravue**.
 
 ---
 
@@ -454,8 +501,8 @@ Open **Settings → MCP servers → Add server**, enter the name `astravue-mcp`,
 
 1. Open **Plugins** in the sidebar and select **Add custom**.
 2. Enter the name `Astravue` and the MCP server URL `https://api.astravue.com/mcp`.
-3. Under **Advanced settings**, choose **OAuth**, select the acknowledgement checkbox, and click **Add**.
-4. Sign in with your Astravue account and click **Approve**.
+3. Under **Advanced**, set **Authentication** to **OAuth** and **Transport** to **Streamable HTTP**. Select **I understand custom connectors can introduce risks**, then click **Add**.
+4. Sign in with your Astravue account and click **Allow Access**.
 5. Ask Perplexity something Astravue can do, for example *"show my open tasks"*.
 
 In an organization, an administrator must first turn on **Allow members to add custom connectors**.
@@ -469,7 +516,39 @@ Perplexity does not always list the tools of a custom connector. The connection 
 
 ---
 
-### Mistral Le Chat
+### Grok
+
+1. Go to [grok.com/connectors](https://grok.com/connectors) and click **New Connector**.
+2. Select **Custom** and enter the MCP server URL `https://api.astravue.com/mcp`.
+3. Sign in with your Astravue account and click **Allow Access**.
+4. Grok finds the Astravue tools and makes them available in your conversations. Ask, for example, *"show my overdue tasks"*.
+
+On **Grok Business** and **Enterprise**, a team admin adds the connector first: in [console.x.ai](https://console.x.ai), select your team, go to **Grok Business → Connectors**, click **+ Add Connector**, select **Other**, and enter `https://api.astravue.com/mcp`. Team members then connect their own Astravue account at grok.com/connectors.
+
+---
+
+### Muse
+
+1. In a Muse chat, ask Muse to create a custom connector for Astravue with the MCP server URL `https://api.astravue.com/mcp`. Muse guides you through the setup.
+2. When Muse asks, sign in with your Astravue account and click **Allow Access**.
+3. In Muse settings, choose whether Muse can only read your Astravue data or also take actions. You can disconnect Astravue there at any time.
+
+---
+
+### Zoho Zia Agents
+
+1. In Zia Agents, go to **Tools → MCP Servers**, open the **Create** menu and select **MCP Server**.
+2. Enter the connection details:
+   * **Server Name:** `Astravue`
+   * **Server URL:** `https://api.astravue.com/mcp`
+   * **Description:** `Astravue projects, tasks and time tracking`
+   * **Authentication Type:** `OAuth2.0`
+3. Click **Validate & Discover Tools**. When Zia asks, sign in with your Astravue account and click **Allow Access**. Then click **Save Server**.
+4. Open your agent and, under **Connectors**, click **+ Connect MCP Server** and choose **Astravue**. Use **Test Agent** to try it.
+
+---
+
+### Mistral Vibe (Le Chat)
 
 Coming soon.
 
@@ -573,7 +652,7 @@ This allows complex project setup to be completed from a single conversation.
 
 ## Available Tools
 
-The Astravue MCP Server provides **87 tools** across the following categories.
+The Astravue MCP Server provides **88 tools** across the following categories.
 
 <details>
 <summary><strong>Spaces</strong> (5 tools)</summary>
@@ -603,7 +682,7 @@ The Astravue MCP Server provides **87 tools** across the following categories.
 </details>
 
 <details>
-<summary><strong>Tasks</strong> (13 tools)</summary>
+<summary><strong>Tasks</strong> (15 tools)</summary>
 
 | Tool | Description | Example Prompt |
 | :--- | :---------- | :------------- |
@@ -616,6 +695,8 @@ The Astravue MCP Server provides **87 tools** across the following categories.
 | `astravue_move_task` | Moves a task from one project to another | "Move the login task from Sprint 1 to Sprint 2" |
 | `astravue_duplicate_task` | Creates a copy of an existing task | "Duplicate the API integration task with all subtasks" |
 | `astravue_create_personal_task` | Creates a personal task not tied to any project | "Remind me to review the design doc by Friday" |
+| `astravue_update_personal_task` | Updates a personal task's title, status, priority, or dates | "Move my design doc review to next Monday" |
+| `astravue_delete_personal_task` | Moves a personal task and its subtasks to Trash | "Delete my 'Call the vendor' personal task" |
 | `astravue_bulk_create_tasks` | Creates multiple tasks in one call | "Create these 10 sprint tasks with owners and priorities" |
 | `astravue_bulk_update_tasks` | Updates multiple tasks at once | "Set all 5 sprint tasks to In-Progress" |
 | `astravue_bulk_delete_tasks` | Deletes multiple tasks at once | "Delete all the duplicate tasks from Sprint 1" |
@@ -671,13 +752,16 @@ The Astravue MCP Server provides **87 tools** across the following categories.
 </details>
 
 <details>
-<summary><strong>Tags</strong> (3 tools)</summary>
+<summary><strong>Tags</strong> (6 tools)</summary>
 
 | Tool | Description | Example Prompt |
 | :--- | :---------- | :------------- |
 | `astravue_list_tags` | Lists all tags available in your organization | "What tags do we have?" |
+| `astravue_create_tag` | Creates a new workspace tag | "Create a tag called 'customer-facing'" |
+| `astravue_bulk_create_tags` | Creates up to 50 tags in one call, skipping ones that already exist | "Create tags for frontend, backend, and QA" |
 | `astravue_add_tag_to_task` | Adds an existing tag to a task | "Tag the login task as 'urgent'" |
 | `astravue_remove_tag_from_task` | Removes a tag from a task | "Remove the 'blocked' tag from the deployment task" |
+| `astravue_remove_tag_from_all_tasks` | Removes one or more tags from every task in the workspace | "Remove the 'old-sprint' tag from all tasks" |
 
 </details>
 
@@ -692,15 +776,18 @@ The Astravue MCP Server provides **87 tools** across the following categories.
 </details>
 
 <details>
-<summary><strong>Time Tracking</strong> (10 tools)</summary>
+<summary><strong>Time Tracking</strong> (13 tools)</summary>
 
 | Tool | Description | Example Prompt |
 | :--- | :---------- | :------------- |
-| `astravue_start_timer` | Starts a timer on a task | "Start tracking time on the API documentation task" |
-| `astravue_stop_timer` | Stops the active timer | "Stop my timer" |
+| `astravue_start_timer` | Starts a timer on a project task | "Start tracking time on the API documentation task" |
+| `astravue_start_personal_task_timer` | Starts a timer on a personal task | "Start a timer on my 'Prepare board deck' task" |
+| `astravue_stop_timer` | Stops a running timer on any task, project or personal | "Stop my timer" |
 | `astravue_get_active_timers` | Lists running timers | "Do I have any active timers?" |
-| `astravue_log_manual_time` | Logs a time entry with a specific duration | "Log 2 hours on the API documentation task" |
-| `astravue_log_time_range` | Logs time with a start and end time | "Log time from 9am to 11:30am on the backend refactor" |
+| `astravue_log_manual_time` | Logs a time entry with a specific duration on a project task | "Log 2 hours on the API documentation task" |
+| `astravue_log_personal_task_time` | Logs a time entry with a specific duration on a personal task | "Log 45 minutes on my inbox cleanup task" |
+| `astravue_log_time_range` | Logs time with a start and end time on a project task | "Log time from 9am to 11:30am on the backend refactor" |
+| `astravue_log_personal_task_time_range` | Logs time with a start and end time on a personal task | "Log 2pm to 3pm on my 'Prepare board deck' task" |
 | `astravue_get_task_time_entries` | Lists time entries for a task | "How much time was logged on the backend refactor?" |
 | `astravue_get_project_time_entries` | Lists all time entries across a project | "Show all time logged in Sprint 2" |
 | `astravue_get_project_time_summary` | Gets billable vs non-billable time totals | "How many total hours were spent on the Backend project?" |
